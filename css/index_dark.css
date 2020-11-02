@@ -57,7 +57,7 @@ header {
   color: #e5e5e5;
 }
 
-header nav {
+header #navBar {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -65,7 +65,7 @@ header nav {
   min-width: 500px;
 }
 
-header nav a {
+header #navBar a {
   font-size: 1.5em;
   text-decoration: none;
   text-transform: uppercase;
@@ -74,7 +74,8 @@ header nav a {
   display: inline-block;
 }
 
-header nav a:hover {
+header #navBar a:hover,
+header #navBar .active {
   text-decoration: none;
   border-bottom: 4px solid #c2c9d7;
   color: #c2c9d7;
@@ -103,7 +104,7 @@ header .switch_theme_color {
 /* --------------- About Page --------------- */
 
 #about_page {
-  height: 100vh;
+  height: 110vh;
   background-color: #e5e5e5;
   padding-bottom: 5%;
 }

@@ -20,10 +20,10 @@
             <div id="logo">
                 <a href="#landing_page" class="js-scrollTo">Titov Ivan</a>
             </div>
-            <nav>
-                <a href="#about_page" class="js-scrollTo">about</a>
-                <a href="#skillsPage" class="js-scrollTo">skills</a>
-                <a href="#contact_form" class="js-scrollTo">contact</a>
+            <nav id="navBar">
+                <a href="#about_page" class="js-scrollTo navLink">about</a>
+                <a href="#skillsPage" class="js-scrollTo navLink">skills</a>
+                <a href="#contact_form" class="js-scrollTo navLink">contact</a>
                 <button class="switch_theme_color"></button>
             </nav>
         </header>
@@ -166,6 +166,28 @@
                 return false;
             });
         });
+    </script>
+    <script>
+        // Get the container element
+        var btnContainer = document.getElementById("navBar");
+
+        // Get all buttons with class="btn" inside the container
+        var btns = btnContainer.getElementsByClassName("navLink");
+
+        // Loop through the buttons and add the active class to the current/clicked button
+        for (var i = 0; i < btns.length; i++) {
+            btns[i].addEventListener("click", function() {
+                var current = document.getElementsByClassName("active");
+
+                // If there's no active class
+                if (current.length > 0) {
+                    current[0].className = current[0].className.replace(" active", "");
+                }
+
+                // Add the active class to the current/clicked button
+                this.className += " active";
+            });
+        }
     </script>
 </body>
 
