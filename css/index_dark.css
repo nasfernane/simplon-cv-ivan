@@ -168,6 +168,12 @@ aside h1 {
   padding-bottom: 40px;
 }
 
+aside h2 {
+  font-weight: bold;
+  text-align: left;
+  font-size: 1.3em;
+}
+
 /* --------------- / about page --------------- */
 
 /* --------------- skills page --------------- */
