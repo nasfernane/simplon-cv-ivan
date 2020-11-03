@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV Ivan Titov</title>
 
-    <!-- link Bootstrap -->
+    <!-- Lien Bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 
     <link rel="stylesheet" href="css/index_light.css" id="theme-link">
@@ -21,25 +21,29 @@
                 <a href="#landing_page" class="js-scrollTo">Titov Ivan</a>
             </div>
             <nav id="navBar">
+                <!-- Barre de navigation avec smoothscroll -->
                 <a href="#about_page" class="js-scrollTo navLink">about</a>
                 <a href="#skillsPage" class="js-scrollTo navLink">skills</a>
                 <a href="#contact_form" class="js-scrollTo navLink">contact</a>
+                <!-- bouton switch theme clair/sombre -->
                 <button class="switch_theme_color"></button>
             </nav>
         </header>
 
+        <!-- section landing page, accueil -->
         <section id="landing_page"> </section>
 
+        <!-- section a propos, présentation et stats -->
         <section id="about_page">
             <div id="about_page_content">
                 <article>
                     <div id="profile">
                         <img src="img/photo_ivan.png" alt="Photo Ivan" class="img-fluid">
                         <div id="profile_infos">
-                            <p><strong>Nom:</strong> Ivan Titov</p>
-                            <p><strong>Profil:</strong> Développeur Web</p>
-                            <p><strong>Mail: </strong>kash174rus@gmail.com</p>
-                            <p><strong>Tel:</strong> +33(0)7 5211 22 90</p>
+                            <p><strong>Nom :</strong> Ivan Titov</p>
+                            <p><strong>Profil :</strong> Développeur Web</p>
+                            <p><strong>Mail : </strong>kash174rus@gmail.com</p>
+                            <p><strong>Tel. :</strong> +33(0)7 5211 22 90</p>
                         </div>
                     </div>
                     <div id="skills_chart">
@@ -58,6 +62,7 @@
             </div>
         </section>
 
+        <!-- section compétences -->
         <section id="skillsPage">
             <h2>Compétences</h2>
             <div id="skillsPage__skillBlock">
@@ -88,8 +93,8 @@
             </div>
         </section>
 
+        <!-- formulaire de contact -->
         <section id="contact_form">
-            <!-- Formulaire de contact -->
             <form method="post" action="">
                 <input type="text" name="name" required placeholder="Votre nom" />
                 <input type="email" name="email" required placeholder="Votre email" />
@@ -98,7 +103,7 @@
                 <input id="submit" type="submit" value="Envoyer" name="mailform" />
             </form>
 
-
+            <!-- fonction php pour le formulaire de contact -->
             <?php
             if (isset($_POST['commentaire'])) {
 
@@ -151,44 +156,13 @@
         </section>
 
     </div>
-
-    <script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
+    <!-- script jquery pour le smoothscrolling -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="javascript/scroll.js"></script>
+    <!-- script pour le dark mode  -->
     <script src="javascript/darkmode.js"></script>
-    <script>
-        $(document).ready(function() {
-            $('.js-scrollTo').on('click', function() { // Au clic sur un élément
-                var page = $(this).attr('href'); // Page cible
-                var speed = 750; // Durée de l'animation (en ms)
-                $('html, body').animate({
-                    scrollTop: $(page).offset().top
-                }, speed); // Go
-                return false;
-            });
-        });
-    </script>
-    <script>
-        // Get the container element
-        var btnContainer = document.getElementById("navBar");
-
-        // Get all buttons with class="btn" inside the container
-        var btns = btnContainer.getElementsByClassName("navLink");
-
-        // Loop through the buttons and add the active class to the current/clicked button
-        for (var i = 0; i < btns.length; i++) {
-            btns[i].addEventListener("click", function() {
-                var current = document.getElementsByClassName("active");
-
-                // If there's no active class
-                if (current.length > 0) {
-                    current[0].className = current[0].className.replace(" active", "");
-                }
-
-                // Add the active class to the current/clicked button
-                this.className += " active";
-            });
-        }
-    </script>
+    <!-- script pour la barre de navigation "active" -->
+    <script src="javascript/activeNavBar.js"></script>
 </body>
 
 </html>

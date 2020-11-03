@@ -1,3 +1,7 @@
+/* ---------------------------------------------------------------- */
+/* --------------- Feuille de style du theme clair  --------------- */
+/* ---------------------------------------------------------------- */
+
 @import url("https://fonts.googleapis.com/css2?family=Rubik&display=swap");
 
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap");
@@ -77,6 +81,7 @@ header #navBar a {
   color: #2d2c2c;
 }
 
+/* affichage des onglets en mode actif et hover */
 header #navBar a:hover,
 header #navBar .active {
   text-decoration: none;
@@ -84,6 +89,7 @@ header #navBar .active {
   color: #c2c9d7;
 }
 
+/* bouton light/dark mode */
 header #navBar .switch_theme_color {
   opacity: 1;
   display: block;
